@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>Welcome to MovieStream</h1>
+<ul>
+    <li th:each="movie : ${videoList}">
+        <a th:href="@{'/watch/' + ${movie}}">▶ [[${movie}]]</a><br>
+        <img th:src="@{'/poster/' + ${movie.replace('.mp4', '.jpg')}}" style="width:200px;">
+    </li>
+</ul>
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>

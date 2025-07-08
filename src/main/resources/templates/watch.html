@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Watch</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h2>Now Streaming</h2>
+<video width="800" controls>
+    <source th:src="@{'/video/' + ${video}}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</body>
+</html>
